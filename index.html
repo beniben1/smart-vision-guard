@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/shield.svg" />
+
+    <!-- Google Fonts — נטענים כאן לביצועים אופטימליים -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Barlow:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Smart-Vision Guard</title>
+
+    <style>
+      /* Reset בסיסי — שאר ה-styling בתוך הקומפוננטות */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body, #root { height: 100%; }
+      body {
+        background: #080808;
+        color: #ccc;
+        font-family: 'Barlow', sans-serif;
+        /* מניעת selection בממשק ביטחוני */
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      /* אפשר selection בשדות טקסט */
+      input, textarea { -webkit-user-select: text; user-select: text; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

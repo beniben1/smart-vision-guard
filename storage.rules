@@ -1,0 +1,11 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /detections/{file} {
+      // ציבורי לקריאה — נחוץ כדי ש-Twilio יוכל להציג את התמונה ב-WhatsApp
+      allow read;
+      // כתיבה רק למשתמש מחובר
+      allow write: if request.auth != null;
+    }
+  }
+}

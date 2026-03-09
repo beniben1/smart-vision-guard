@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // אירועי זיהוי — רק משתמש מחובר
+    match /events/{eventId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Embeddings ל-Re-ID — רק משתמש מחובר
+    match /embeddings/{embId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
